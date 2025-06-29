@@ -6,13 +6,13 @@ llm = AutoModelForCausalLM.from_pretrained(
 
 
 def get_prompt(instruction: str) -> str:
-    system = "You are an AI assistant that gives helpful answers. You answer the question in a short and concise way."
+    system = "You are an AI assistant that gives helpful answers.  Answer with just the correct word, nothing more."
     prompt = f"### System:\n{system}\n\n### User:\n{instruction}\n\n### Response:\n"
     print(f"Prompt created: {prompt}")
     return prompt
 
 
-question = "Which city is the capital of Zimbabwe?"
+question = "The name of the capital of Zimbabwe?"
 prompt = get_prompt(question)
 for word in llm(prompt, stream=True):
     print(word, end="", flush=True)
