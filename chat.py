@@ -20,7 +20,11 @@ history = []
 
 question = "Which city is the capital of India?"
 
+answer = ""
 prompt = get_prompt(question)
 for word in llm(prompt, stream=True):
     print(word, end="", flush=True)
+    answer += word
 print()
+
+history.append(answer)
