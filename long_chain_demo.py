@@ -18,7 +18,7 @@ prompt = PromptTemplate(template=prompt_template, input_variables=["instruction"
 memory = ConversationBufferMemory(
     memory_key="context",
     return_messages=True,
-    output_key="context",
+    output_key="text"
 )   
 chain = LLMChain(llm=llm, prompt=prompt, verbose=True, memory=memory)
 
