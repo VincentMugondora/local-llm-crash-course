@@ -7,6 +7,6 @@ llm = CTransformers(
     max_new_tokens=20,
 )   
 
-prompt = f"### System:\n{system}\n\n### User:\n{instruction}\n\n### Response:\n"
+prompt = f"### System:\nYou are an AI assistant that gives helpful answers. You answer the question in a short and concise way.\n\n### User:\n{instruction}\n\n### Response:\n"
 
 print(llm.invoke("Which is the capital of France?"))
